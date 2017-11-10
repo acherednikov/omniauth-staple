@@ -7,7 +7,7 @@ module OmniAuth
       STAPLE_AUTH_URL =  ENV['STAPLE_AUTH_URL'] || 'http://localhost:3003'
       STAPLE_AUTH_ME_URL = '/oauth/me.json'
 
-      option :name, :staple_oauth
+      # option :name, :staple_oauth
 
       option :include_query_string, false
 
