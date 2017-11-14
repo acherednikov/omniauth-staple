@@ -12,11 +12,13 @@ module OmniauthStaple
         puts OmniAuth::Strategies::Staple::STAPLE_AUTH_URL
         puts self.inspect
 
-        HTTP.post(OmniAuth::Strategies::Staple::STAPLE_AUTH_URL, json: {
-            email: self.email,
-            encrypted_password: self.encrypted_password,
-            first_name: self.first_name,
-            last_name: self.last_name
+        HTTP.post([OmniAuth::Strategies::Staple::STAPLE_AUTH_URL, '/users'].join, json: {
+            user: {
+              email: self.email,
+              password: self.encrypted_password,
+              first_name: self.first_name,
+              last_name: self.last_name
+          }
         })
 
       end
