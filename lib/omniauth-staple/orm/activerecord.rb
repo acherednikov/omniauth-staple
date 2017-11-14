@@ -1,3 +1,5 @@
+require "http"
+
 module OmniauthStaple
   module ActiveRecord
 
@@ -8,8 +10,10 @@ module OmniauthStaple
       after_create do
         puts '>>> USER INFO POST >>>'
         puts OmniAuth::Strategies::Staple::STAPLE_AUTH_URL
-
         puts self.inspect
+
+        HTTP.post(OmniAuth::Strategies::Staple::STAPLE_AUTH_URL, {value_test: :test_})
+
       end
 
     end
