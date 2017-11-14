@@ -7,8 +7,8 @@ module OmniauthStaple
 
       after_create do
         puts '>>> USER INFO POST >>>'
-        puts Staple::STAPLE_AUTH_URL
-        
+        puts ::Staple::STAPLE_AUTH_URL
+
         puts self.inspect
       end
 
