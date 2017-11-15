@@ -12,7 +12,7 @@ module OmniauthStaple
 
         HTTP.post('http://localhost:3003/users', json: {
           user: {
-            email:      esource.email,
+            email:      resource.email,
             password:   params['user']['password'],
             first_name: resource.first_name,
             last_name:  resource.last_name
