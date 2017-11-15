@@ -3,14 +3,9 @@ require "http"
 module OmniauthStaple
   module ActionController
 
-    def remote_sign_up(action_name)
-
+    def remote_sign_up_after(action_name)
       self.send(:after_action, {only: action_name}) do |controller|
-        puts '->>>'
-        puts '->>>'
-        puts '->>>'
-
-        HTTP.post('http://localhost:3003/users', json: {
+        HTTP.post([OmniAuth::Strategies::Staple::STAPLE_AUTH_URL, '/users'].join, json: {
           user: {
             email:      resource.email,
             password:   params['user']['password'],

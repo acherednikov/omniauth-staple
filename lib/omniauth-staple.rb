@@ -13,5 +13,3 @@ require 'omniauth/action_controller'
 ActiveSupport.on_load :active_record do
   # require 'omniauth-staple/orm/activerecord'
 end
-
-# end
