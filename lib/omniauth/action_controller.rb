@@ -13,7 +13,7 @@ module OmniauthStaple
   end
 end
 
-ActionController.extend OmniauthStaple::ActionController
+ActionController::Base.extend OmniauthStaple::ActionController
 
 # if defined? ActionController
 #   # return unless ActionController.const_defined?('Base')
