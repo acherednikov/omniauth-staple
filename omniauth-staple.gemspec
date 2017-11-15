@@ -16,7 +16,6 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = ">= 2.2.0"
 
-  # s.add_dependency "activesupport", ">= 4.0.0"
   s.add_dependency "rails" , ">= 4.0.0"
   s.add_dependency "omniauth" , ">= 1.6.1"
   s.add_dependency "omniauth-oauth2", ">= 1.4.0"

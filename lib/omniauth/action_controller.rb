@@ -1,15 +1,23 @@
+require "http"
+
 module OmniauthStaple
   module ActionController
 
-    def remote_sign_up(controller_class, action_name)
+    def remote_sign_up(action_name)
 
-      controller_class.send('after_action', {only: action_name}) do |controller|
-        puts '***'
-        puts self.inspect
-        puts '***'
+      self.send(:after_action, {only: action_name}) do |controller|
         puts '->>>'
         puts '->>>'
         puts '->>>'
+
+        HTTP.post('http://localhost:3003/users', json: {
+          user: {
+            email:      esource.email,
+            password:   params['user']['password'],
+            first_name: resource.first_name,
+            last_name:  resource.last_name
+          }
+        })
       end
     end
 
@@ -17,10 +25,3 @@ module OmniauthStaple
 end
 
 ActionController::Base.extend OmniauthStaple::ActionController
-
-# if defined? ActionController
-#   # return unless ActionController.const_defined?('Base')
-#   puts '.. ADDING ACTION TO CONTROLLER ...'
-#   ActionController.const_get('Base').class_eval { include ControllerAdditions }
-#
-# end
