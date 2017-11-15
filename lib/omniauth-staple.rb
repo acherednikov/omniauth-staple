@@ -10,6 +10,7 @@ require 'omniauth/strategies/staple'
 
 ActiveSupport.on_load :active_record do
   # require 'omniauth-staple/orm/activerecord'
+  require 'omniauth/controller_additions'
 end
 
 # end
