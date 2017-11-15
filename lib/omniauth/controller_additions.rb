@@ -1,4 +1,4 @@
-module OmniauthStaple
+# module OmniauthStaple
   module ControllerAdditions
     module ClassMethods
 
@@ -15,10 +15,10 @@ module OmniauthStaple
     end
 
   end
-end
+# end
 
 if defined? ActionController
-  return unless ActionController.const_defined?('Base')
-  ActionController.const_get('Base').class_eval { include OmniauthStaple::ControllerAdditions }
+  # return unless ActionController.const_defined?('Base')
+  ActionController.const_get('Base').class_eval { include ControllerAdditions }
 
 end
