@@ -5,7 +5,8 @@
 
 require 'omniauth-staple/version'
 require 'omniauth/strategies/staple'
-require 'omniauth/controller_additions'
+
+require 'omniauth/action_controller'
 
 # module OmniauthStaple
 
