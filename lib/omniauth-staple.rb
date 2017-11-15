@@ -8,8 +8,8 @@ require 'omniauth/strategies/staple'
 
 # module OmniauthStaple
 
-  ActiveSupport.on_load :active_record do
-    require 'omniauth-staple/orm/activerecord'
-  end
+ActiveSupport.on_load :active_record do
+  require 'omniauth-staple/orm/activerecord'
+end
 
 # end
