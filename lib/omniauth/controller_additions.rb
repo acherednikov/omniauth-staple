@@ -19,6 +19,7 @@
 
 if defined? ActionController
   # return unless ActionController.const_defined?('Base')
+  puts '.. ADDING ACTION TO CONTROLLER ...'
   ActionController.const_get('Base').class_eval { include ControllerAdditions }
 
 end

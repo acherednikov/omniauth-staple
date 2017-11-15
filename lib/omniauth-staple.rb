@@ -5,12 +5,12 @@
 
 require 'omniauth-staple/version'
 require 'omniauth/strategies/staple'
+require 'omniauth/controller_additions'
 
 # module OmniauthStaple
 
 ActiveSupport.on_load :active_record do
   # require 'omniauth-staple/orm/activerecord'
-  require 'omniauth/controller_additions'
 end
 
 # end
